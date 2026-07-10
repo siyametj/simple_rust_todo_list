@@ -40,10 +40,10 @@ pub fn input_number(prompt: &str) -> i32 {
     let mut input = String::new();
 
     loop {
+        input.clear();
+
         print!("{}: ", prompt);
         io::stdout().flush().expect("Failed to flush");
-
-        input.clear();
 
         match io::stdin().read_line(&mut input) {
             Ok(0) => {
